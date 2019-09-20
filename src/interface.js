@@ -34,7 +34,7 @@ $(document).ready(function(){
   });
 
   function updateScreen(){
-      $("#temperature").html(thermostat.temperature);
+      $("#temperature").html(thermostat.temperature + "&#176");
       $("#settings").html(thermostat.powerSaveDisplay());
       $("#energyLevel").html(thermostat.currentUsage());
       if(thermostat.currentUsage()==='high-usage'){
