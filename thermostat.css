@@ -1,13 +1,15 @@
 body {
   background:grey;
 }
-table, th, td {
+
+table, td {
   border:1px solid black;
   border-collapse:collapse;
   background-color:#ffdab9;
   margin: auto;
   box-shadow: 5px 10px;
 }
+
 h1 {
   color:white;
   font-size: 100px;
