@@ -10,6 +10,11 @@ table, td {
   box-shadow: 5px 10px;
 }
 
+table.plane, td.plane {
+  border: none;
+  box-shadow: none;
+}
+
 h1 {
   color:white;
   font-size: 100px;

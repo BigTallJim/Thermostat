@@ -1,7 +1,8 @@
 thermostat = new Thermostat();
 
 $(document).ready(function(){
-  getCityWeather("London");
+  getLocation();
+  //getWeatherByLatLong("London");
   updateScreen();
 
   $("#upButton").click(function(event){
@@ -83,5 +84,24 @@ $(document).ready(function(){
       updateScreen();
     });
   };
+
+  function getWeatherByLatLong(lat, long){
+    $.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long +"&units=metric&APPID=69312a7de5429a8d9bdbc71b2e7d1710", function(getWeather) {
+      weather = getWeather.name + ": " + getWeather.main.temp + "&#176";
+      updateScreen();
+    });
+  }
+
+  var x = document.getElementById("demo");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } 
+  }
+
+  function showPosition(position) {
+    getWeatherByLatLong(position.coords.latitude, position.coords.longitude);
+  }
 });
 
