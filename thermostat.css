@@ -1,5 +1,5 @@
 body {
-  background:grey;
+  background-image: url("./public/thermo.jpg");
 }
 
 table, td {
@@ -16,7 +16,7 @@ table.plane, td.plane {
 }
 
 h1 {
-  color:white;
+  color:rgb(113, 252, 0);
   font-size: 100px;
 } 
 button {

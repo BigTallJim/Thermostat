@@ -1,11 +1,11 @@
 thermostat = new Thermostat();
 
 $(document).ready(function(){
-  getLocation();
-  //getWeatherByLatLong("London");
+  //getLocation();
+  getCityWeather("London");
   updateScreen();
 
-  $("#upButton").click(function(event){
+  $("#upButton").click(function(){
     thermostat.up(1);
     updateScreen();
   });
@@ -31,7 +31,11 @@ $(document).ready(function(){
 
   $("#cities").change(function(){
     var selectedCity = $("#cities").val();
-    getCityWeather(selectedCity);
+    if(selectedCity === "Current Location"){
+      getLocation();
+    } else {
+      getCityWeather(selectedCity);
+    };
   });
 
   function updateScreen(){
